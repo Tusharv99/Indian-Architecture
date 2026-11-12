@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vāstu // Royal Indian Architecture (Ancient Hindu • Mughal • Persian • British)</title>
+  <meta name="description"
+    content="Explore five millennia of royal Indian architectural genius: from ancient monolithic rock-cut Hindu temples and Persian sultanate arches to golden Mughal symmetries and British Indo-Saracenic grandeur.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0d0908',
+            surface: '#17110f',
+            royalred: {
+              400: '#ef4444',
+              500: '#dc2626',
+              600: '#b91c1c',
+              700: '#991b1b',
+              800: '#7f1d1d',
+              900: '#450a0a',
+            },
+            royalbrown: {
+              300: '#d97706',
+              400: '#b45309',
+              500: '#92400e',
+              600: '#78350f',
+              700: '#5c280b',
+              800: '#3e1a07',
+              900: '#230f04',
+            },
+            gold: {
+              300: '#fde047',
+              400: '#f59e0b',
+              500: '#d4af37',
+              600: '#b45309'
+            },
+            marble: '#fafaf9'
+          },
+          fontFamily: {
+            royal: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body
+  class="bg-[#0d0908] text-[#f5f2ed] selection:bg-red-700 selection:text-white min-h-screen flex flex-col antialiased">
+
+  <!-- =========================================================================
+       1. GLASSMORPHISM NAVBAR (MAINTAINED ACROSS ALL PAGES)
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ">
+    <nav id="mainNavbar"
+      class="glass-navbar px-6 py-4 md:px-12 flex items-center justify-between transition-all duration-300 ">
+
+      <!-- Logo / Brand Title -->
+      <a href="index.html" class="flex items-center gap-3 group">
+
+        <div>
+          <span
+            class="font-royal text-lg md:text-xl font-bold tracking-widest text-white group-hover:text-amber-200 transition-colors">
+            VĀSTU
+          </span>
+          <span class="block text-[10px] tracking-[0.25em] text-neutral-400 font-medium uppercase -mt-1">
+            Royal Indian Architecture
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items with Glass Pills -->
+      <div class="hidden md:flex items-center gap-1.5 p-1.5 rounded-full glass-pill">
+        <a href="index.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Home</a>
+        <a href="timeline.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Timeline</a>
+        <a href="projects.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Projects</a>
+        <a href="about.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">About</a>
+        <a href="contact.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Contact</a>
+      </div>
+
+      <!-- Quick Action CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="projects.html"
+          class="px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white hover:from-red-600 hover:to-amber-500 hover:shadow-lg hover:shadow-red-900/40 border border-amber-400/30 transition-all transform hover:-translate-y-0.5">
+          Explore Projects ↗
+        </a>
+      </div>
+
+      <!-- Mobile Menu Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl glass-pill text-neutral-300 hover:text-white"
+        aria-expanded="false" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenuDrawer"
+      class="hidden md:hidden glass-panel border-b border-white/10 px-6 py-6 transition-all duration-300 opacity-0 -translate-y-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">Home</a>
+        <a href="timeline.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">Timeline &amp; Epochs</a>
+        <a href="projects.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">Projects</a>
+        <a href="about.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">About
+          Indian Architecture</a>
+        <a href="contact.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">Contact
+          & Inquiry</a>
+        <div class="pt-3 border-t border-white/10">
+          <a href="projects.html"
+            class="block text-center py-3 rounded-xl bg-gradient-to-r from-red-700 to-amber-600 text-white font-semibold text-xs uppercase tracking-wider border border-amber-400/30">
+            Explore Architecture
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-24">
+
+    <!-- =========================================================================
+         2. HERO SECTION: 85% VH & 85% VW CINEMATIC VIDEO CONTAINER
+         (Requirement: "put the video of indian achirtecture ine whole screen like 85 percent of vh vw")
+         ========================================================================= -->
+    <section class="py-8 md:py-12 flex flex-col items-center justify-center relative overflow-hidden">
+
+      <!-- 85vw x 85vh Hero Video Card Container -->
+      <div
+        class="w-[90vw] h-[82vh] md:h-[85vh] max-w-8xl mx-auto rounded-3xl md:rounded-[44px] overflow-hidden relative shadow-2xl border border-white/10 group">
+
+        <!-- Video Element with autoplay, loop, muted, playsinline -->
+        <video id="heroVideo" autoplay muted loop playsinline
+          poster="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1600&q=80"
+          class="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-1000 ease-out">
+          <source src="assets/videos/hero.webm" type="video/webm">
+          <!-- Fallback direct video stream -->
+          <source src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Taj_Mahal.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Ambient Dark Gradient Overlays for Readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/30 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-radial-gradient from-transparent to-black/60 pointer-events-none"></div>
+
+        <!-- Top Status Bar Inside Video Frame -->
+        <div class="absolute top-6 left-6 md:top-10 md:left-10 z-20 flex items-center gap-3">
+          <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-black/50 backdrop-blur-md border border-white/20 text-neutral-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Heritage Cinematography // 4K Archive
+          </span>
+        </div>
+
+        <!-- Video Controls: Play/Pause & Sound Toggle on Top Right -->
+        <div class="absolute top-6 right-6 md:top-10 md:right-10 z-20 flex items-center gap-2">
+          <button id="videoPlayBtn"
+            class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
+            aria-label="Toggle video playback">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-xs uppercase tracking-wider font-medium text-white">Pause</span>
+          </button>
+
+          <button id="videoMuteBtn"
+            class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all"
+            aria-label="Toggle video sound">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+            </svg>
+            <span class="text-xs uppercase tracking-wider font-medium text-white">Unmute</span>
+          </button>
+        </div>
+
+        <!-- Hero Content Overlay (Bottom Left to Center) -->
+        <div class="absolute bottom-8 left-6 md:bottom-14 md:left-12 right-6 md:right-12 z-20 max-w-4xl">
+          <div class="space-y-4">
+            <p
+              class="text-xs md:text-sm font-royal uppercase tracking-[0.3em] text-amber-300 font-semibold drop-shadow-md">
+              From Sacred Antiquity to Imperial Horizons
+            </p>
+            <h1
+              class="font-royal text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-wide drop-shadow-lg">
+              ROYAL ARCHITECTURE <br class="hidden sm:inline">OF INDIA
+            </h1>
+            <p class="text-neutral-200 text-sm md:text-lg max-w-2xl font-light leading-relaxed drop-shadow">
+              A monumental journey through Hindu rock-cut sanctuaries, Persian-infused Sultanates, the symmetry of the
+              Mughal golden age, and British Indo-Saracenic grandeur.
+            </p>
+
+            <!-- Quick CTA Buttons -->
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="projects.html"
+                class="px-7 py-3 rounded-full text-xs md:text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white hover:from-red-600 hover:to-amber-500 hover:shadow-xl hover:shadow-red-900/40 border border-amber-400/30 transition-all transform hover:-translate-y-0.5">
+                Explore Projects ↗
+              </a>
+              <a href="#about-preview"
+                class="px-7 py-3 rounded-full text-xs md:text-sm font-medium uppercase tracking-wider glass-pill text-white hover:bg-white/20 transition-all">
+                Discover The Four Eras ↓
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Subtle Scroll Indicator -->
+      <div class="mt-6 flex items-center gap-2 text-neutral-500 text-xs tracking-widest uppercase">
+        <span class="w-8 h-px bg-neutral-700"></span>
+        <span>Scroll to Explore Masterpieces</span>
+        <span class="w-8 h-px bg-neutral-700"></span>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. RANDOM CURVY & FLOWY BIOMORPHIC CONTAINERS (MAD ARCHITECTS INSPIRATION)
+         (Requirement: "in landing page show some image like not in just rect or square but in random curvy flowy like container")
+         ========================================================================= -->
+    <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-royal tracking-[0.25em] text-amber-400 block mb-2 font-semibold">
+          Organic Fluid Formations &bull; Biophilic Geometry
+        </span>
+        <h2 class="font-royal text-3xl md:text-4xl font-extrabold text-white">
+          Beyond Rigid Angles: The Fluid Soul of Indian Architecture
+        </h2>
+        <p class="text-neutral-400 text-sm md:text-base mt-3 leading-relaxed">
+          Inspired by both ancient Vedic organic mandalas and the fluid biomorphic philosophy of MAD Architects, Indian
+          royal structures seamlessly merge living geology with geometric grace.
+        </p>
+      </div>
+
+      <!-- Curvy Flowy Containers Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+
+        <!-- Curvy Container 1: Kailasa Monolith (Hindu) -->
+        <div class="flex flex-col items-center text-center group">
+          <div
+            class="curvy-flowy-1 w-64 h-72 md:w-72 md:h-80 shadow-2xl border-2 border-amber-600/40 relative mb-6 group-hover:scale-105 group-hover:border-amber-400/70 transition-all duration-500">
+            <img src="assets/images/monuments/kailasa-ellora.jpg" alt="Kailasa Rock-Cut Temple"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-4 text-white">
+              <span class="text-[10px] tracking-widest uppercase font-semibold text-amber-300">Monolithic Carving</span>
+              <p class="font-royal text-base font-bold">Kailasa Ellora</p>
+            </div>
+          </div>
+          <h3 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+            Sacred Hindu Rock-Cut
+          </h3>
+          <p class="text-neutral-400 text-xs md:text-sm mt-2 max-w-xs leading-relaxed">
+            Chiseled top-down from living mountain rock without a single joint or brick, mimicking sacred Himalayan
+            peaks.
+          </p>
+        </div>
+
+        <!-- Curvy Container 2: Taj Mahal Sinuous Dome & Symmetry (Mughal) -->
+        <div class="flex flex-col items-center text-center group">
+          <div
+            class="curvy-flowy-2 w-72 h-80 md:w-80 md:h-96 shadow-2xl border-2 border-red-700/50 relative mb-6 group-hover:scale-105 group-hover:border-amber-400/70 transition-all duration-500">
+            <img src="assets/images/monuments/taj-mahal.jpg" alt="Taj Mahal Bulbous Dome"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-4 text-white">
+              <span class="text-[10px] tracking-widest uppercase font-semibold text-amber-300">Bulbous Double
+                Dome</span>
+              <p class="font-royal text-base font-bold">The Taj Mahal</p>
+            </div>
+          </div>
+          <h3 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+            Imperial Mughal Symphony
+          </h3>
+          <p class="text-neutral-400 text-xs md:text-sm mt-2 max-w-xs leading-relaxed">
+            Organic marble curves, Persian pishtaq arches, and floral pietra dura gemstone mosaics harmonizing with
+            sunlight.
+          </p>
+        </div>
+
+        <!-- Curvy Container 3: Victoria Memorial Curvilinear Rotunda (British Indo-Saracenic) -->
+        <div class="flex flex-col items-center text-center group">
+          <div
+            class="curvy-flowy-3 w-64 h-72 md:w-72 md:h-80 shadow-2xl border-2 border-stone-400/40 relative mb-6 group-hover:scale-105 group-hover:border-white/70 transition-all duration-500">
+            <img src="assets/images/monuments/victoria-memorial.jpg" alt="Victoria Memorial Kolkata"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 inset-x-4 text-white">
+              <span class="text-[10px] tracking-widest uppercase font-semibold text-amber-300">Indo-Saracenic
+                Fusion</span>
+              <p class="font-royal text-base font-bold">Victoria Memorial</p>
+            </div>
+          </div>
+          <h3 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+            Colonial Indo-Saracenic
+          </h3>
+          <p class="text-neutral-400 text-xs md:text-sm mt-2 max-w-xs leading-relaxed">
+            The grand marriage of British neoclassical domes and Italian colonnades with Mughal chhatris and Rajasthani
+            jalis.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. THE FOUR EPOCHS SHOWCASE WITH DETAILED EXAMPLES & TIMELINE
+         ========================================================================= -->
+    <section id="about-preview" class="py-20 px-6 md:px-12 bg-[#140e0c] border-y border-white/5 relative">
+      <div class="max-w-7xl mx-auto">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <span class="text-xs uppercase font-royal tracking-[0.25em] text-amber-400 block mb-2 font-semibold">
+              Chronological Epochs &bull; Evolution of Form
+            </span>
+            <h2 class="font-royal text-3xl md:text-5xl font-extrabold text-white">
+              The Four Great Architectural Traditions
+            </h2>
+          </div>
+          <a href="timeline.html"
+            class="inline-flex items-center gap-2 text-sm font-semibold text-amber-300 hover:text-white tracking-wider transition-colors">
+            <span>Explore 5,000-Year Timeline</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- 4 Grid Cards of the Eras -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Era 1: Ancient Hindu -->
+          <div
+            class="glass-panel rounded-3xl p-6 border-white/5 hover:border-amber-500/40 transition-all duration-300 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-amber-600/15 border border-amber-500/30 text-amber-300 flex items-center justify-center font-royal font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
+              I
+            </div>
+            <span class="text-xs font-semibold text-amber-300 uppercase tracking-widest block mb-1">
+              Antiquity – 14th C.
+            </span>
+            <h3 class="font-royal text-xl font-bold text-white mb-3">
+              Hindu & Monolithic
+            </h3>
+            <p class="text-neutral-400 text-xs md:text-sm leading-relaxed mb-4">
+              Governed by Vastu Shastra and Shilpa Shastra. Characterized by colossal rock-cut monolithic caves
+              (Ellora), towering Dravidian vimanas (Brihadisvara), and fractal Nagara shikharas (Khajuraho).
+            </p>
+            <div class="pt-4 border-t border-white/5 text-xs text-neutral-300 space-y-1">
+              <p><strong class="text-white">Examples:</strong> Kailasa Cave, Hampi, Brihadisvara</p>
+              <p><strong class="text-white">Core Principle:</strong> Cosmic Mountain Axis &amp; Interlocking Granite</p>
+            </div>
+          </div>
+
+          <!-- Era 2: Persian & Sultanate -->
+          <div
+            class="glass-panel rounded-3xl p-6 border-white/5 hover:border-amber-700/50 transition-all duration-300 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-orange-950/40 border border-orange-800/40 text-orange-200 flex items-center justify-center font-royal font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
+              II
+            </div>
+            <span class="text-xs font-semibold text-orange-200 uppercase tracking-widest block mb-1">
+              12th – 16th C.
+            </span>
+            <h3 class="font-royal text-xl font-bold text-white mb-3">
+              Persian & Indo-Islamic
+            </h3>
+            <p class="text-neutral-400 text-xs md:text-sm leading-relaxed mb-4">
+              Introduced true arcuated engineering to the subcontinent: pointed true arches, squinches, calligraphy
+              bands, and whispering domes like Gol Gumbaz and Qutub Minar.
+            </p>
+            <div class="pt-4 border-t border-white/5 text-xs text-neutral-300 space-y-1">
+              <p><strong class="text-white">Examples:</strong> Qutub Minar, Gol Gumbaz, Charminar</p>
+              <p><strong class="text-white">Core Principle:</strong> Intersecting Arches &amp; Calligraphic Geometry</p>
+            </div>
+          </div>
+
+          <!-- Era 3: Mughal Golden Age -->
+          <div
+            class="glass-panel rounded-3xl p-6 border-white/5 hover:border-red-600/50 transition-all duration-300 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-red-700/20 border border-red-600/30 text-red-300 flex items-center justify-center font-royal font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
+              III
+            </div>
+            <span class="text-xs font-semibold text-red-300 uppercase tracking-widest block mb-1">
+              1526 – 1707 CE
+            </span>
+            <h3 class="font-royal text-xl font-bold text-white mb-3">
+              Mughal Grandeur
+            </h3>
+            <p class="text-neutral-400 text-xs md:text-sm leading-relaxed mb-4">
+              The zenith of bilateral symmetry, quadripartite Charbagh paradise gardens, double-shell white marble
+              domes, red sandstone citadels, and exquisite Pietra Dura stone inlay.
+            </p>
+            <div class="pt-4 border-t border-white/5 text-xs text-neutral-300 space-y-1">
+              <p><strong class="text-white">Examples:</strong> Taj Mahal, Fatehpur Sikri, Red Fort</p>
+              <p><strong class="text-white">Core Principle:</strong> Charbagh Paradise &amp; Bilateral Symmetry</p>
+            </div>
+          </div>
+
+          <!-- Era 4: British Indo-Saracenic -->
+          <div
+            class="glass-panel rounded-3xl p-6 border-white/5 hover:border-white/40 transition-all duration-300 group">
+            <div
+              class="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 text-white flex items-center justify-center font-royal font-bold text-lg mb-6 group-hover:scale-110 transition-transform">
+              IV
+            </div>
+            <span class="text-xs font-semibold text-neutral-200 uppercase tracking-widest block mb-1">
+              1858 – 1947 CE
+            </span>
+            <h3 class="font-royal text-xl font-bold text-white mb-3">
+              British Indo-Saracenic
+            </h3>
+            <p class="text-neutral-400 text-xs md:text-sm leading-relaxed mb-4">
+              An imperial synthesis marrying Victorian Gothic Revival and Neoclassicism with Indian elements: Rajasthani
+              jharokhas, Rajput chhatris, and Buddhist stupa dome profiles.
+            </p>
+            <div class="pt-4 border-t border-white/5 text-xs text-neutral-300 space-y-1">
+              <p><strong class="text-white">Examples:</strong> Victoria Memorial, CST Mumbai, Rashtrapati Bhavan</p>
+              <p><strong class="text-white">Core Principle:</strong> Western Structural Core with Indigenous Envelopes
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- =========================================================================
+             DEDICATED 5,000-YEAR ARCHITECTURAL TIMELINE SHOWCASE BANNER
+             ========================================================================= -->
+        <div class="mt-16 p-8 md:p-12 rounded-3xl glass-panel border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          <div class="absolute -top-16 -left-16 w-56 h-56 bg-red-700/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-16 -right-16 w-56 h-56 bg-amber-600/15 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="relative z-10 text-left max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-[0.2em] bg-red-950/40 text-amber-300 border border-red-800/40 mb-3">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              Dedicated Historical Chronology
+            </div>
+            <h3 class="font-royal text-2xl md:text-3xl font-extrabold text-white mb-2">
+              Explore the 5,000-Year Architectural Timeline
+            </h3>
+            <p class="text-neutral-300 text-xs md:text-sm leading-relaxed">
+              Trace the complete chronological evolution across five millennia—from 756 CE Kailasa rock-cut monoliths and 1010 CE Chola granite cupolas to Qutub Minar, the Taj Mahal, and 1929 CE Rashtrapati Bhavan.
+            </p>
+          </div>
+
+          <div class="relative z-10 flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+            <a href="timeline.html"
+              class="w-full sm:w-auto text-center px-8 py-3.5 rounded-full text-xs md:text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white hover:from-red-600 hover:to-amber-500 border border-amber-400/40 shadow-xl shadow-red-950/60 whitespace-nowrap transition-all transform hover:-translate-y-0.5">
+              Open Master Timeline &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. CALL TO ACTION SECTION: BENTO SHOWCASE ENTRY
+         ========================================================================= -->
+    <section class="py-24 px-6 md:px-12 relative overflow-hidden">
+      <div
+        class="max-w-5xl mx-auto rounded-3xl md:rounded-[40px] p-8 md:p-14 glass-panel border-red-800/30 text-center relative shadow-2xl">
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-red-700/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-amber-600/15 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <span class="text-xs uppercase font-royal tracking-[0.25em] text-amber-400 font-semibold block mb-3">
+          Interactive Architecture Gallery
+        </span>
+        <h2 class="font-royal text-3xl md:text-5xl font-extrabold text-white mb-4">
+          Experience the Royal Projects
+        </h2>
+        <p class="text-neutral-300 text-sm md:text-base max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+          Filter masterpieces on-the-fly by Mughal, Hindu, Persian, and British categories. Hover to reveal
+          architectural eras and click any card to inspect full historical blueprints and engineering highlights in an
+          interactive popup.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="projects.html"
+            class="px-8 py-3.5 rounded-full text-xs md:text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white hover:from-red-600 hover:to-amber-500 hover:shadow-xl hover:shadow-red-900/40 border border-amber-400/30 transition-all transform hover:-translate-y-0.5">
+            Launch Projects Gallery ↗
+          </a>
+          <a href="contact.html"
+            class="px-8 py-3.5 rounded-full text-xs md:text-sm font-medium uppercase tracking-wider glass-pill text-white hover:bg-white/20 transition-all">
+            Consult Heritage Experts
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       6. GLASSMORPHISM FOOTER (MAINTAINED ACROSS ALL PAGES)
+       ========================================================================= -->
+  <footer class="glass-navbar border-t border-white/10 pt-16 pb-12 px-6 md:px-12 mt-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand & Mission Column -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+
+          <span class="font-royal text-lg font-bold tracking-widest text-white">
+            VĀSTU // ARCHITECTURE
+          </span>
+        </div>
+        <p class="text-neutral-400 text-xs md:text-sm max-w-md leading-relaxed">
+          Dedicated to documenting the monumental heritage of India across Vedic antiquity, Dravidian granite vimanas,
+          Persian sultanate vaults, the Mughal golden age, and British Indo-Saracenic grandeur.
+        </p>
+
+      </div>
+
+      <!-- Quick Page Links -->
+      <div>
+        <h4 class="font-royal text-xs font-bold uppercase tracking-widest text-white mb-4">
+          Navigation
+        </h4>
+        <ul class="space-y-2.5 text-xs text-neutral-400">
+          <li><a href="index.html" class="hover:text-amber-300 transition-colors">Home Landing</a></li>
+          <li><a href="timeline.html" class="hover:text-amber-300 transition-colors">5,000-Year Timeline</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Projects</a></li>
+          <li><a href="about.html" class="hover:text-amber-300 transition-colors">About Indian Architecture</a></li>
+          <li><a href="contact.html" class="hover:text-amber-300 transition-colors">Contact & Inquiry</a></li>
+        </ul>
+      </div>
+
+      <!-- Architectural Eras Filter Quicklinks -->
+      <div>
+        <h4 class="font-royal text-xs font-bold uppercase tracking-widest text-white mb-4">
+          Architectural Eras
+        </h4>
+        <ul class="space-y-2.5 text-xs text-neutral-400">
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Hindu Rock-Cut & Temple</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Persian & Sultanate Arches</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Mughal Symmetries & Domes</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">British Indo-Saracenic</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright & Disclaimer Bar -->
+
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

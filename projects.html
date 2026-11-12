@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects Archive of Royal Indian Architecture</title>
+  <meta name="description" content="Explore an interactive bento grid gallery of Royal Indian Architecture spanning Hindu, Mughal, Persian, and British epochs. Hover for eras and click to inspect architectural blueprints and history.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0d0908',
+            surface: '#17110f',
+            royalred: {
+              400: '#ef4444',
+              500: '#dc2626',
+              600: '#b91c1c',
+              700: '#991b1b',
+              800: '#7f1d1d',
+              900: '#450a0a',
+            },
+            royalbrown: {
+              300: '#d97706',
+              400: '#b45309',
+              500: '#92400e',
+              600: '#78350f',
+              700: '#5c280b',
+              800: '#3e1a07',
+              900: '#230f04',
+            },
+            gold: {
+              300: '#fde047',
+              400: '#f59e0b',
+              500: '#d4af37',
+              600: '#b45309'
+            },
+            marble: '#fafaf9'
+          },
+          fontFamily: {
+            royal: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0d0908] text-[#f5f2ed] selection:bg-red-700 selection:text-white min-h-screen flex flex-col antialiased">
+
+  <!-- =========================================================================
+       1. GLASSMORPHISM NAVBAR (MAINTAINED)
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="mainNavbar" class="glass-navbar px-6 py-4 md:px-12 flex items-center justify-between transition-all duration-300">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 group">
+       
+        <div>
+          <span class="font-royal text-lg md:text-xl font-bold tracking-widest text-white group-hover:text-amber-200 transition-colors">
+            VĀSTU
+          </span>
+          <span class="block text-[10px] tracking-[0.25em] text-neutral-400 font-medium uppercase -mt-1">
+            Royal Indian Architecture
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-1.5 p-1.5 rounded-full glass-pill">
+        <a href="index.html" class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Home</a>
+        <a href="timeline.html" class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Timeline</a>
+        <a href="projects.html" class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-amber-300 font-semibold transition-all">Projects</a>
+        <a href="about.html" class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">About</a>
+        <a href="contact.html" class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Contact</a>
+      </div>
+
+      <!-- Action Button -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="contact.html" class="px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white border border-white/15 transition-all">
+          Heritage Inquiry ↗
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl glass-pill text-neutral-300 hover:text-white" aria-expanded="false" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenuDrawer" class="hidden md:hidden glass-panel border-b border-white/10 px-6 py-6 transition-all duration-300 opacity-0 -translate-y-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html" class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-300">Home</a>
+        <a href="timeline.html" class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-300">Timeline &amp; Epochs</a>
+        <a href="projects.html" class="nav-link py-2.5 text-sm uppercase tracking-wider font-semibold text-amber-300">Projects</a>
+        <a href="about.html" class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-300">About Indian Architecture</a>
+        <a href="contact.html" class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-300">Contact & Inquiry</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. RIGHT MIDDLE FLOATING FILTER DOCK
+       (Requirement: "in project page on the right middle side give the options like mughal , hindu , persian , british")
+       ========================================================================= -->
+  <aside class="fixed right-3 md:right-6 top-1/2 -translate-y-1/2 z-40 hidden sm:flex flex-col gap-2 p-2 rounded-2xl glass-panel shadow-2xl border border-white/15">
+    <div class="text-[9px] uppercase font-royal tracking-widest text-neutral-400 text-center font-bold px-2 py-1 border-b border-white/10">
+      Era Filter
+    </div>
+    
+    <!-- All Filter Button -->
+    <button class="filter-btn active flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all bg-red-700 text-white border border-red-600 hover:shadow-lg" data-filter="all">
+      <span>All</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+    </button>
+
+    <!-- Mughal Filter Button -->
+    <button class="filter-btn flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-white hover:bg-white/10 transition-all border border-transparent" data-filter="mughal">
+      <span>Mughal</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+    </button>
+
+    <!-- Hindu Filter Button -->
+    <button class="filter-btn flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-white hover:bg-white/10 transition-all border border-transparent" data-filter="hindu">
+      <span>Hindu</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+    </button>
+
+    <!-- Persian Filter Button -->
+    <button class="filter-btn flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-white hover:bg-white/10 transition-all border border-transparent" data-filter="persian">
+      <span>Persian</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
+    </button>
+
+    <!-- British Filter Button -->
+    <button class="filter-btn flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-neutral-300 hover:text-white hover:bg-white/10 transition-all border border-transparent" data-filter="british">
+      <span>British</span>
+      <span class="w-1.5 h-1.5 rounded-full bg-stone-200"></span>
+    </button>
+  </aside>
+
+  <!-- =========================================================================
+       3. MAIN PROJECTS PAGE CONTENT
+       ========================================================================= -->
+  <main class="flex-grow pt-28 pb-20 px-4 sm:px-8 md:px-12 lg:px-16 max-w-[1520px] mx-auto w-full">
+    
+    <!-- Page Header Section -->
+    <div class="mb-8 md:mb-12 text-left">
+      <div class="flex items-center gap-2 text-xs font-royal uppercase tracking-[0.25em] text-amber-400 font-semibold mb-2">
+        <span>Curated Architectural Portfolio</span>
+        <span>&bull;</span>
+        <span id="monumentCount" class="text-neutral-400">Loading Monuments Archive...</span>
+      </div>
+      <h1 class="font-royal text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-wide">
+        PROJECTS // ROYAL ARCHITECTURE
+      </h1>
+      <p class="text-neutral-400 text-sm md:text-base mt-2 max-w-3xl leading-relaxed">
+         Hover on any photograph to reveal its architectural era and completion date, and click to inspect structural blueprints in the popup modal.
+      </p>
+
+      <!-- Mobile Top Filter Buttons (for screens where right dock may cover edge content) -->
+      <div class="sm:hidden flex flex-wrap items-center gap-2 mt-6 p-2 rounded-2xl glass-panel">
+        <button class="filter-btn active px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-red-700 text-white border border-red-600" data-filter="all">All</button>
+        <button class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-neutral-300" data-filter="mughal">Mughal</button>
+        <button class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-neutral-300" data-filter="hindu">Hindu</button>
+        <button class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-neutral-300" data-filter="persian">Persian</button>
+        <button class="filter-btn px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider text-neutral-300" data-filter="british">British</button>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         4. THE BENTO GRID (DYNAMICALLY POPULATED FROM data/monuments.json)
+         (Requirement: "in this page just show the photos like the bento grid style like i have attached a screenshot. , and on hover image little blur the image and on the left bottm side show the name and time of that architechure , and show clik to open")
+         ========================================================================= -->
+    <div id="bentoGrid" class="grid grid-cols-12 gap-4 sm:gap-5 md:gap-6 transition-opacity duration-300">
+      <!-- Dynamically filled by assets/js/projects.js -->
+    </div>
+
+  </main>
+
+  <!-- =========================================================================
+       5. DETAIL POPUP MODAL WITH SCROLL BEHAVIOR
+       (Requirement: "and it opens like a popup and show the details and everything about the item and wehn it open put scroll behaviour.")
+       ========================================================================= -->
+  <div id="monumentModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-8 bg-black/85 backdrop-blur-xl" role="dialog" aria-modal="true">
+    
+    <!-- Modal Card Container (with custom scrollbar and scroll behavior) -->
+    <div id="monumentModalContent" class="w-full max-w-4xl max-h-[88vh] overflow-y-auto scroll-smooth rounded-3xl bg-[#140e0c] border border-red-900/30 shadow-2xl relative">
+      
+      <!-- Sticky / Fixed Close Button -->
+      <button id="closeModalBtn" class="absolute top-4 right-4 z-30 w-10 h-10 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-red-700 hover:text-white hover:border-red-500 transition-all" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Dynamic Content Body Populated via JS -->
+      <div id="modalDynamicContent">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       6. GLASSMORPHISM FOOTER (MAINTAINED)
+       ========================================================================= -->
+  <footer class="glass-navbar border-t border-white/10 pt-16 pb-12 px-6 md:px-12 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+  
+          <span class="font-royal text-lg font-bold tracking-widest text-white">
+            VĀSTU // ARCHITECTURE
+          </span>
+        </div>
+        <p class="text-neutral-400 text-xs md:text-sm max-w-md leading-relaxed">
+          Showcasing the structural, religious, and aesthetic evolution of Indian Architecture.
+        </p>
+        
+      </div>
+
+      <div>
+        <h4 class="font-royal text-xs font-bold uppercase tracking-widest text-white mb-4">
+          Navigation
+        </h4>
+        <ul class="space-y-2.5 text-xs text-neutral-400">
+          <li><a href="index.html" class="hover:text-amber-300 transition-colors">Home Landing</a></li>
+          <li><a href="timeline.html" class="hover:text-amber-300 transition-colors">5,000-Year Timeline</a></li>
+          <li><a href="projects.html" class="text-amber-300 font-semibold">Projects</a></li>
+          <li><a href="about.html" class="hover:text-amber-300 transition-colors">About Indian Architecture</a></li>
+          <li><a href="contact.html" class="hover:text-amber-300 transition-colors">Contact & Inquiry</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-royal text-xs font-bold uppercase tracking-widest text-white mb-4">
+           Filters
+        </h4>
+        <ul class="space-y-2.5 text-xs text-neutral-400">
+          <li><button onclick="document.querySelector('[data-filter=hindu]').click()" class="hover:text-amber-300 transition-colors text-left">Hindu Rock-Cut & Temple</button></li>
+          <li><button onclick="document.querySelector('[data-filter=mughal]').click()" class="hover:text-amber-300 transition-colors text-left">Mughal Symmetries & Domes</button></li>
+          <li><button onclick="document.querySelector('[data-filter=persian]').click()" class="hover:text-amber-300 transition-colors text-left">Persian & Sultanate Arches</button></li>
+          <li><button onclick="document.querySelector('[data-filter=british]').click()" class="hover:text-amber-300 transition-colors text-left">British Indo-Saracenic</button></li>
+        </ul>
+      </div>
+
+    </div>
+
+   
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/projects.js"></script>
+</body>
+</html>

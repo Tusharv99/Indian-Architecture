@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact // Heritage Inquiries & Architectural Research</title>
+  <meta name="description"
+    content="Get in touch with the Vāstu Heritage Archive for academic research, monument documentation, and architectural consultations across royal Indian architecture.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0d0908',
+            surface: '#17110f',
+            royalred: {
+              400: '#ef4444',
+              500: '#dc2626',
+              600: '#b91c1c',
+              700: '#991b1b',
+              800: '#7f1d1d',
+              900: '#450a0a',
+            },
+            royalbrown: {
+              300: '#d97706',
+              400: '#b45309',
+              500: '#92400e',
+              600: '#78350f',
+              700: '#5c280b',
+              800: '#3e1a07',
+              900: '#230f04',
+            },
+            gold: {
+              300: '#fde047',
+              400: '#f59e0b',
+              500: '#d4af37',
+              600: '#b45309'
+            },
+            marble: '#fafaf9'
+          },
+          fontFamily: {
+            royal: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body
+  class="bg-[#0d0908] text-[#f5f2ed] selection:bg-red-700 selection:text-white min-h-screen flex flex-col antialiased">
+
+  <!-- =========================================================================
+       1. GLASSMORPHISM NAVBAR (MAINTAINED)
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="mainNavbar"
+      class="glass-navbar px-6 py-4 md:px-12 flex items-center justify-between transition-all duration-300">
+
+      <a href="index.html" class="flex items-center gap-3 group">
+       
+        <div>
+          <span
+            class="font-royal text-lg md:text-xl font-bold tracking-widest text-white group-hover:text-amber-200 transition-colors">
+            VĀSTU
+          </span>
+          <span class="block text-[10px] tracking-[0.25em] text-neutral-400 font-medium uppercase -mt-1">
+            Royal Indian Architecture
+          </span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-1.5 p-1.5 rounded-full glass-pill">
+        <a href="index.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Home</a>
+        <a href="timeline.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Timeline</a>
+        <a href="projects.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Projects</a>
+        <a href="about.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">About</a>
+        <a href="contact.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-amber-300 font-semibold transition-all">Contact</a>
+      </div>
+
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="projects.html"
+          class="px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white hover:from-red-600 hover:to-amber-500 border border-amber-400/30 transition-all">
+          Explore Project↗
+        </a>
+      </div>
+
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl glass-pill text-neutral-300 hover:text-white"
+        aria-expanded="false" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <div id="mobileMenuDrawer"
+      class="hidden md:hidden glass-panel border-b border-white/10 px-6 py-6 transition-all duration-300 opacity-0 -translate-y-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-300">Home</a>
+        <a href="timeline.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-300">Timeline &amp; Epochs</a>
+        <a href="projects.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-300">Projects</a>
+        <a href="about.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-300">About
+          Indian Architecture</a>
+        <a href="contact.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-semibold text-amber-300">Contact & Inquiry</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTACT SECTION
+       ========================================================================= -->
+  <main class="flex-grow pt-28 pb-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
+
+    <!-- Header -->
+    <div class="text-left mb-12">
+      <span class="text-xs uppercase font-royal tracking-[0.25em] text-amber-400 font-semibold block mb-2">
+        Curator Desk &bull; Academic Inquiries
+      </span>
+      <h1 class="font-royal text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-wide">
+        CONTACT & HERITAGE DESK
+      </h1>
+      <p class="text-neutral-400 text-sm md:text-base mt-2 max-w-2xl leading-relaxed">
+        Whether you are undertaking research in ancient Vastu Shastra, documenting Mughal marble inlays, or planning an
+        architectural field expedition, submit your inquiry below.
+      </p>
+    </div>
+
+    <!-- Contact Grid: Left Form, Right Contact Info & FAQs -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+      <!-- Contact Form Container (Glassmorphic) -->
+      <div class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-10 border border-white/10 shadow-2xl">
+        <h2 class="font-royal text-xl md:text-2xl font-bold text-white mb-2">
+          Submit Architectural Inquiry
+        </h2>
+        <p class="text-xs md:text-sm text-neutral-400 mb-8">
+          Fill out the details below. All fields marked with an asterisk (<span class="text-amber-400">*</span>) are
+          required.
+        </p>
+
+        <form id="architectureInquiryForm" class="space-y-6" novalidate>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Full Name -->
+            <div>
+              <label for="senderName"
+                class="block text-xs uppercase font-royal tracking-wider text-neutral-300 font-semibold mb-2">
+                Your Full Name <span class="text-red-400">*</span>
+              </label>
+              <input type="text" id="senderName" required placeholder="e.g. Tushar Verma"
+                class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-sm">
+            </div>
+
+            <!-- Email Address -->
+            <div>
+              <label for="senderEmail"
+                class="block text-xs uppercase font-royal tracking-wider text-neutral-300 font-semibold mb-2">
+                Email Address <span class="text-red-400">*</span>
+              </label>
+              <input type="email" id="senderEmail" required placeholder="name@university.edu"
+                class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Architectural Era of Interest -->
+            <div>
+              <label for="interestEra"
+                class="block text-xs uppercase font-royal tracking-wider text-neutral-300 font-semibold mb-2">
+                Era of Architectural Focus
+              </label>
+              <select id="interestEra"
+                class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/10 text-white focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-sm">
+                <option value="Mughal Architecture" class="bg-[#17110f]">Mughal Empire (Symmetry & Marble)</option>
+                <option value="Ancient Hindu Temples" class="bg-[#17110f]">Hindu & Monolithic Rock-Cut (Vastu)</option>
+                <option value="Persian & Sultanate" class="bg-[#17110f]">Persian & Deccan Sultanates (Arches)</option>
+                <option value="British Indo-Saracenic" class="bg-[#17110f]">British Indo-Saracenic Synthesis</option>
+                <option value="All Eras" class="bg-[#17110f]">Comprehensive Heritage (All Eras)</option>
+              </select>
+            </div>
+
+            <!-- Purpose of Inquiry -->
+            <div>
+              <label for="inquiryPurpose"
+                class="block text-xs uppercase font-royal tracking-wider text-neutral-300 font-semibold mb-2">
+                Inquiry Type
+              </label>
+              <select id="inquiryPurpose"
+                class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/10 text-white focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-sm">
+                <option value="Academic Project" class="bg-[#17110f]">MCA CAP 774 Academic Project</option>
+                <option value="Heritage Tour" class="bg-[#17110f]">Architectural Tour Consultation</option>
+                <option value="Research Paper" class="bg-[#17110f]">Monographic Historical Research</option>
+                <option value="Digital Media" class="bg-[#17110f]">Photography & Media Documentation</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Message Textarea -->
+          <div>
+            <label for="inquiryMessage"
+              class="block text-xs uppercase font-royal tracking-wider text-neutral-300 font-semibold mb-2">
+              Detailed Inquiry Message <span class="text-red-400">*</span>
+            </label>
+            <textarea id="inquiryMessage" rows="5" required
+              placeholder="Please share specific monuments, structural parameters, or topics you wish to explore..."
+              class="w-full px-4 py-3 rounded-xl bg-black/40 border border-white/10 text-white placeholder-neutral-500 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all text-sm"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit"
+            class="w-full py-4 rounded-xl bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white font-royal font-bold text-xs uppercase tracking-widest hover:from-red-600 hover:to-amber-500 hover:shadow-xl hover:shadow-red-900/40 border border-amber-400/30 transition-all transform hover:-translate-y-0.5">
+            Transmit Heritage Inquiry ↗
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Right Column: Research Centers & Interactive FAQ Accordion -->
+      <div class="lg:col-span-5 space-y-6">
+
+        <!-- Regional Coordinates Card -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
+          <h3 class="font-royal text-lg font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+            Heritage Documentation Centers
+          </h3>
+          <p class="text-xs text-neutral-400 leading-relaxed">
+            Archive nodes coordinating field surveys, digital photogrammetry, and architectural conservation.
+          </p>
+
+          <div class="space-y-3 pt-2 text-xs">
+            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+              <span class="text-amber-300 font-semibold block">Northern Bureau &bull; New Delhi</span>
+              <span class="text-neutral-400">Janpath &amp; Nizamuddin Heritage Precinct</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+              <span class="text-amber-300 font-semibold block">Western Guild &bull; Jaipur &amp; Amer</span>
+              <span class="text-neutral-400">Aravalli Stone Preservation Cell, Rajasthan</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+              <span class="text-amber-300 font-semibold block">Southern Guild &bull; Thanjavur &amp; Hampi</span>
+              <span class="text-neutral-400">Dravidian Granite Restoration Guild, Tamil Nadu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive FAQ Accordion -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
+          <h3 class="font-royal text-lg font-bold text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+            Architectural Curators' FAQ
+          </h3>
+
+          <!-- FAQ Item 1 -->
+          <div class="faq-item border-b border-white/5 pb-3">
+            <button
+              class="faq-question w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-neutral-200 hover:text-amber-300 transition-colors">
+              <span>What distinguishes a Vimana from a Shikhara?</span>
+              <svg class="faq-icon w-4 h-4 text-neutral-400 transition-transform duration-300 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden text-xs text-neutral-400 pt-1 leading-relaxed">
+              In South Indian Dravidian architecture, the <strong class="text-white">Vimana</strong> is the stepped
+              pyramidal tower situated directly over the sanctum sanctorum. In Northern Nagara architecture, the <strong
+                class="text-white">Shikhara</strong> is a curvilinear, beehive-like mountain tower crowned by an
+              amalaka.
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item border-b border-white/5 pb-3">
+            <button
+              class="faq-question w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-neutral-200 hover:text-amber-300 transition-colors">
+              <span>How did Persian squinches transform Indian domes?</span>
+              <svg class="faq-icon w-4 h-4 text-neutral-400 transition-transform duration-300 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden text-xs text-neutral-400 pt-1 leading-relaxed">
+              Squinch arches span the four upper corners of a square room, converting the square into an octagon. This
+              structural transition made it possible to seat colossal circular masonry domes without internal support
+              columns, as seen in Gol Gumbaz.
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item pb-1">
+            <button
+              class="faq-question w-full flex items-center justify-between text-left py-2 text-xs font-semibold text-neutral-200 hover:text-amber-300 transition-colors">
+              <span>What makes Pietra Dura in the Taj Mahal unique?</span>
+              <svg class="faq-icon w-4 h-4 text-neutral-400 transition-transform duration-300 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden text-xs text-neutral-400 pt-1 leading-relaxed">
+              Known locally as <em>parchin kari</em>, semi-precious gems (lapis lazuli, jade, malachite, coral, and
+              onyx) were chiseled into millimeter-precise floral patterns and embedded flush into polished white Makrana
+              marble without perceptible seams.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       3. GLASSMORPHISM FOOTER (MAINTAINED)
+       ========================================================================= -->
+  <footer class="glass-navbar border-t border-white/10 pt-16 pb-12 px-6 md:px-12 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+        
+          <span class="font-royal text-lg font-bold tracking-widest text-white">
+            VĀSTU // ARCHITECTURE
+          </span>
+        </div>
+        <p class="text-neutral-400 text-xs md:text-sm max-w-md leading-relaxed">
+          The curated architectural gateway to India's royal structures from ancient rock-cut monoliths to British
+          Indo-Saracenic landmarks.
+        </p>
+        
+      </div>
+
+      <div>
+        <h4 class="font-royal text-xs font-bold uppercase tracking-widest text-white mb-4">
+          Navigation
+        </h4>
+        <ul class="space-y-2.5 text-xs text-neutral-400">
+          <li><a href="index.html" class="hover:text-amber-300 transition-colors">Home Landing</a></li>
+          <li><a href="timeline.html" class="hover:text-amber-300 transition-colors">5,000-Year Timeline</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Projects</a></li>
+          <li><a href="about.html" class="hover:text-amber-300 transition-colors">About Indian Architecture</a></li>
+          <li><a href="contact.html" class="text-amber-300 font-semibold">Contact & Inquiry</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-royal text-xs font-bold uppercase tracking-widest text-white mb-4">
+          Examiner Note
+        </h4>
+        <p class="text-xs text-neutral-400 leading-relaxed">
+          Client-side form validation handles required fields, regex email syntax, and dispatches a dynamic feedback
+          toast notification without page reloads.
+        </p>
+      </div>
+
+    </div>
+
+ 
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
+</body>
+
+</html>

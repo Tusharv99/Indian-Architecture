@@ -1,0 +1,277 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --bg-dark: #0d0908;             
+  --bg-card: #17110f;            
+  --bg-card-hover: #221613;
+  --royal-red: #b91c1c;          
+  --royal-red-light: #ef4444;
+  --royal-red-glow: rgba(185, 28, 28, 0.35);
+  --royal-brown: #78350f;        
+  --royal-brown-dark: #451a03;
+  --gold-primary: #f59e0b;       
+  --gold-light: #fde047;    
+  --gold-glow: rgba(245, 158, 11, 0.25);
+  --royal-white: #fafaf9;         
+  --border-glass: rgba(255, 235, 225, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+  color: #f5f2ed;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Typography styles */
+.font-royal {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.03em;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom Scrollbar for Page & Modals */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0908;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a1a14;
+  border-radius: 9999px;
+  border: 2px solid #0d0908;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--royal-red);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(23, 17, 15, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+}
+
+.glass-navbar {
+  background: rgba(13, 9, 8, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 235, 225, 0.07);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.014);
+  backdrop-filter: blur(90px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-pill:hover,
+.glass-pill.active {
+  background: linear-gradient(135deg, rgba(185, 28, 28, 0.32), rgba(120, 53, 15, 0.25), rgba(245, 158, 11, 0.15));
+  border-color: rgba(245, 158, 11, 0.5);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(185, 28, 28, 0.28);
+}
+
+/* Random Curvy & Flowy MAD Architects Style Organic Containers */
+.curvy-flowy-1 {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morphOrganic1 14s ease-in-out infinite alternate;
+  overflow: hidden;
+  will-change: border-radius;
+  transition: all 0.5s ease;
+}
+
+.curvy-flowy-2 {
+  border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%;
+  animation: morphOrganic2 16s ease-in-out infinite alternate;
+  overflow: hidden;
+  will-change: border-radius;
+  transition: all 0.5s ease;
+}
+
+.curvy-flowy-3 {
+  border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%;
+  animation: morphOrganic3 12s ease-in-out infinite alternate;
+  overflow: hidden;
+  will-change: border-radius;
+  transition: all 0.5s ease;
+}
+
+@keyframes morphOrganic1 {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(0deg);
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    transform: rotate(2deg) scale(1.02);
+  }
+  100% {
+    border-radius: 60% 40% 60% 40% / 70% 30% 50% 50%;
+    transform: rotate(-1deg);
+  }
+}
+
+@keyframes morphOrganic2 {
+  0% {
+    border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+  }
+  100% {
+    border-radius: 50% 50% 30% 70% / 60% 40% 70% 30%;
+  }
+}
+
+@keyframes morphOrganic3 {
+  0% {
+    border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%;
+  }
+  50% {
+    border-radius: 65% 35% 60% 40% / 45% 55% 45% 55%;
+  }
+  100% {
+    border-radius: 40% 60% 35% 65% / 60% 40% 55% 45%;
+  }
+}
+
+/* Subtle float animation */
+.animate-float {
+  animation: floatingSlow 6s ease-in-out infinite;
+}
+
+@keyframes floatingSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Bento Card Hover Styles matching requirement:
+   "on hover image little blur the image and on the left bottm side show the name and time of that architechure , and show clik to open" */
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  background-color: #17110f;
+  border: 1px solid rgba(255, 235, 225, 0.07);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  border-color: rgba(220, 38, 38, 0.55);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.9), 0 0 28px rgba(185, 28, 28, 0.28);
+  transform: translateY(-4px);
+}
+
+.bento-card img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease;
+}
+
+.bento-card:hover img {
+  transform: scale(1.06);
+  filter: blur(2px) brightness(0.85);
+}
+
+/* Dark gradient mask that deepens on hover */
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(24, 14, 11, 0.72) 70%, rgba(13, 9, 8, 0.96) 100%);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.bento-card:hover .bento-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 20%, rgba(32, 16, 12, 0.8) 60%, rgba(13, 9, 8, 0.98) 100%);
+}
+
+/* Bottom left information banner on card */
+.bento-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 10;
+  transition: all 0.35s ease;
+}
+
+/* Badge for Era - Royal Indian Architectural Themes */
+.era-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.era-badge.hindu {
+  background: rgba(217, 119, 6, 0.25);
+  color: #fde68a;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+}
+
+.era-badge.mughal {
+  background: rgba(185, 28, 28, 0.28);
+  color: #fca5a5;
+  border: 1px solid rgba(220, 38, 38, 0.55);
+}
+
+.era-badge.persian {
+  background: rgba(120, 53, 15, 0.32);
+  color: #fed7aa;
+  border: 1px solid rgba(180, 83, 9, 0.5);
+}
+
+.era-badge.british {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fafaf9;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* Modal Popup Transition */
+#monumentModal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#monumentModal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#monumentModalContent {
+  transform: scale(0.95) translateY(15px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#monumentModal.open #monumentModalContent {
+  transform: scale(1) translateY(0);
+}
+
+/* Royal Indian Architecture text gradient */
+.text-gradient-gold,
+.text-gradient-royal {
+  background: linear-gradient(135deg, #ffffff 0%, #fde047 25%, #f59e0b 50%, #dc2626 75%, #78350f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

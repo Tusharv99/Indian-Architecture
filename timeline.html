@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline // 5,000-Year Architectural Chronology — VĀSTU</title>
+  <meta name="description"
+    content="Explore the 5,000-year chronological evolution of Indian Architecture: from ancient Vedic roots and monolithic Dravidian granite temples to Persian pointed arches, Mughal symmetry, and British Indo-Saracenic grandeur.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0d0908',
+            surface: '#17110f',
+            royalred: {
+              400: '#ef4444',
+              500: '#dc2626',
+              600: '#b91c1c',
+              700: '#991b1b',
+              800: '#7f1d1d',
+              900: '#450a0a',
+            },
+            royalbrown: {
+              300: '#d97706',
+              400: '#b45309',
+              500: '#92400e',
+              600: '#78350f',
+              700: '#5c280b',
+              800: '#3e1a07',
+              900: '#230f04',
+            },
+            gold: {
+              300: '#fde047',
+              400: '#f59e0b',
+              500: '#d4af37',
+              600: '#b45309'
+            },
+            marble: '#fafaf9'
+          },
+          fontFamily: {
+            royal: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body
+  class="bg-[#0d0908] text-[#f5f2ed] selection:bg-red-700 selection:text-white min-h-screen flex flex-col antialiased">
+
+  <!-- =========================================================================
+       1. GLASSMORPHISM NAVBAR WITH TIMELINE INCLUDED
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="mainNavbar"
+      class="glass-navbar px-6 py-4 md:px-12 flex items-center justify-between transition-all duration-300">
+
+      <!-- Logo / Brand Title -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div>
+          <span
+            class="font-royal text-lg md:text-xl font-bold tracking-widest text-white group-hover:text-amber-200 transition-colors">
+            VĀSTU
+          </span>
+          <span class="block text-[10px] tracking-[0.25em] text-neutral-400 font-medium uppercase -mt-1">
+            Royal Indian Architecture
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items with Glass Pills -->
+      <div class="hidden md:flex items-center gap-1.5 p-1.5 rounded-full glass-pill">
+        <a href="index.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Home</a>
+        <a href="timeline.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-amber-300 font-semibold transition-all">Timeline</a>
+        <a href="projects.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Projects</a>
+        <a href="about.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">About</a>
+        <a href="contact.html"
+          class="nav-link px-5 py-2 rounded-full text-xs uppercase tracking-wider font-medium text-neutral-300 hover:text-white transition-all">Contact</a>
+      </div>
+
+      <!-- Quick Action CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="projects.html"
+          class="px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white hover:from-red-600 hover:to-amber-500 hover:shadow-lg hover:shadow-red-900/40 border border-amber-400/30 transition-all transform hover:-translate-y-0.5">
+          Explore Projects ↗
+        </a>
+      </div>
+
+      <!-- Mobile Menu Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl glass-pill text-neutral-300 hover:text-white"
+        aria-expanded="false" aria-label="Toggle navigation menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenuDrawer"
+      class="hidden md:hidden glass-panel border-b border-white/10 px-6 py-6 transition-all duration-300 opacity-0 -translate-y-2">
+      <div class="flex flex-col gap-3">
+        <a href="index.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">Home</a>
+        <a href="timeline.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-amber-300 font-semibold">Timeline &amp; Epochs</a>
+        <a href="projects.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">Projects Gallery</a>
+        <a href="about.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">About Indian Architecture</a>
+        <a href="contact.html"
+          class="nav-link py-2.5 text-sm uppercase tracking-wider font-medium text-neutral-300 hover:text-amber-400">Contact &amp; Inquiry</a>
+        <div class="pt-3 border-t border-white/10">
+          <a href="projects.html"
+            class="block text-center py-3 rounded-xl bg-gradient-to-r from-red-700 to-amber-600 text-white font-semibold text-xs uppercase tracking-wider border border-amber-400/30">
+            Explore Architecture
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. TIMELINE PAGE HERO HEADER
+       ========================================================================= -->
+  <main class="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
+
+    <div class="text-center max-w-4xl mx-auto mb-20">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.25em] bg-red-950/40 text-amber-300 border border-red-800/40 mb-4">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        Curated Historical Chronology &bull; 5,000 Years
+      </div>
+      <h1 class="font-royal text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-wide leading-tight mb-6">
+        TIMELINE // THE EVOLUTION OF FORM
+      </h1>
+      <p class="text-neutral-300 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
+        Journey through five millennia of Indian architectural genius. Trace the transition from cosmic rock-cut sanctums
+        and Dravidian granite towers to Persian pointed arches, Mughal imperial symmetry, and British Indo-Saracenic synthesis.
+      </p>
+
+      <!-- Quick Jump Nav Pill Bar -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+        <a href="#traditions-section"
+          class="px-4 py-2 rounded-full text-xs font-medium text-neutral-300 hover:text-white glass-pill hover:border-amber-400/50 transition-all">
+          Four Great Traditions ↓
+        </a>
+        <a href="#chronology-section"
+          class="px-4 py-2 rounded-full text-xs font-medium text-neutral-300 hover:text-white glass-pill hover:border-amber-400/50 transition-all">
+          5,000-Year Milestone Line ↓
+        </a>
+        <a href="projects.html"
+          class="px-4 py-2 rounded-full text-xs font-medium text-amber-300 hover:text-white bg-red-950/40 border border-amber-500/30 hover:border-amber-400 transition-all">
+          View All 44 Monuments ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         PART 1: CHRONOLOGICAL EPOCHS • EVOLUTION OF FORM
+         THE FOUR GREAT ARCHITECTURAL TRADITIONS
+         ========================================================================= -->
+    <section id="traditions-section" class="scroll-mt-32 mb-28">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-white/10 gap-6">
+        <div>
+          <span class="text-xs uppercase font-royal tracking-[0.25em] text-amber-400 block mb-2 font-semibold">
+            Chronological Epochs &bull; Evolution of Form
+          </span>
+          <h2 class="font-royal text-3xl md:text-4xl font-extrabold text-white">
+            The Four Great Architectural Traditions
+          </h2>
+        </div>
+        <p class="text-neutral-400 text-xs md:text-sm max-w-md">
+          Four distinct civilizational epochs defined the skyline of the subcontinent, each introducing revolutionary materials, structural mechanics, and spiritual philosophies.
+        </p>
+      </div>
+
+      <!-- 4 Grid Cards of the Eras -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Era 1: Ancient Hindu & Monolithic -->
+        <div
+          class="glass-panel rounded-3xl p-6 border-white/10 hover:border-amber-500/40 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-2xl bg-amber-600/15 border border-amber-500/30 text-amber-300 flex items-center justify-center font-royal font-bold text-lg group-hover:scale-110 transition-transform">
+                I
+              </div>
+              <span class="era-badge hindu">Hindu Epoch</span>
+            </div>
+            
+            <span class="text-xs font-semibold text-amber-300 uppercase tracking-widest block mb-1">
+              Antiquity – 14th C.
+            </span>
+            <h3 class="font-royal text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+              Hindu &amp; Monolithic
+            </h3>
+            <p class="text-neutral-400 text-xs md:text-sm leading-relaxed mb-4">
+              Governed by Vastu Shastra and Shilpa Shastra. Characterized by colossal rock-cut monolithic caves
+              (Ellora), towering Dravidian granite vimanas (Brihadisvara), and fractal Nagara mountain shikharas (Khajuraho).
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 text-xs text-neutral-300 space-y-2 mt-4">
+            <p><strong class="text-amber-300">Key Monuments:</strong> Kailasa Cave, Brihadisvara, Konark, Hampi, Modhera</p>
+            <p><strong class="text-amber-300">Core Principle:</strong> Cosmic Mountain Axis &amp; Interlocking Dry Granite</p>
+            <p><strong class="text-amber-300">Materials:</strong> Deccan Basalt, Coarse Granite, Khondalite, Sandstone</p>
+            <a href="projects.html" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-amber-400 hover:text-white pt-2 transition-colors">
+              <span>Explore 11 Hindu Monuments</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Era 2: Persian & Indo-Islamic Sultanate -->
+        <div
+          class="glass-panel rounded-3xl p-6 border-white/10 hover:border-orange-600/40 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-2xl bg-orange-950/40 border border-orange-800/40 text-orange-200 flex items-center justify-center font-royal font-bold text-lg group-hover:scale-110 transition-transform">
+                II
+              </div>
+              <span class="era-badge persian">Persian Epoch</span>
+            </div>
+
+            <span class="text-xs font-semibold text-orange-200 uppercase tracking-widest block mb-1">
+              12th – 16th C.
+            </span>
+            <h3 class="font-royal text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+              Persian &amp; Sultanate
+            </h3>
+            <p class="text-neutral-400 text-xs md:text-sm leading-relaxed mb-4">
+              Introduced true arcuated engineering to the subcontinent: pointed true arches, squinches, calligraphy
+              bands, and whispering masonry domes like Gol Gumbaz, Qutub Minar, and Charminar.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 text-xs text-neutral-300 space-y-2 mt-4">
+            <p><strong class="text-orange-200">Key Monuments:</strong> Charminar, Qutub Minar, Gol Gumbaz, Alai Darwaza</p>
+            <p><strong class="text-orange-200">Core Principle:</strong> Intersecting Arch Pendentives &amp; Geometric Calligraphy</p>
+            <p><strong class="text-orange-200">Materials:</strong> Grey Quartzite, Lime Hydraulic Mortar, Red Sandstone</p>
+            <a href="projects.html" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-orange-200 hover:text-white pt-2 transition-colors">
+              <span>Explore 11 Persian Monuments</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Era 3: Mughal Imperial Golden Age -->
+        <div
+          class="glass-panel rounded-3xl p-6 border-white/10 hover:border-red-600/50 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-2xl bg-red-700/20 border border-red-600/40 text-red-300 flex items-center justify-center font-royal font-bold text-lg group-hover:scale-110 transition-transform">
+                III
+              </div>
+              <span class="era-badge mughal">Mughal Epoch</span>
+            </div>
+
+            <span class="text-xs font-semibold text-red-300 uppercase tracking-widest block mb-1">
+              1526 – 1707 CE
+            </span>
+            <h3 class="font-royal text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+              Mughal Imperial Splendor
+            </h3>
+            <p class="text-neutral-400 text-xs md:text-sm leading-relaxed mb-4">
+              Peak bilateral symmetry, bulbous double domes, Charbagh four-fold paradise gardens, and delicate Pietra
+              Dura floral stone inlay in pure Makrana white marble and Sikri red sandstone.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 text-xs text-neutral-300 space-y-2 mt-4">
+            <p><strong class="text-red-300">Key Monuments:</strong> Taj Mahal, Red Fort, Fatehpur Sikri, Humayun's Tomb</p>
+            <p><strong class="text-red-300">Core Principle:</strong> Bilateral Axial Symmetry &amp; Double-Dome Harmony</p>
+            <p><strong class="text-red-300">Materials:</strong> Makrana White Marble, Sikri Red Sandstone, Semi-Precious Gems</p>
+            <a href="projects.html" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-red-300 hover:text-white pt-2 transition-colors">
+              <span>Explore 11 Mughal Monuments</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Era 4: British Colonial & Indo-Saracenic -->
+        <div
+          class="glass-panel rounded-3xl p-6 border-white/10 hover:border-stone-400/40 transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div
+                class="w-12 h-12 rounded-2xl bg-stone-700/20 border border-stone-500/30 text-stone-300 flex items-center justify-center font-royal font-bold text-lg group-hover:scale-110 transition-transform">
+                IV
+              </div>
+              <span class="era-badge british">British Epoch</span>
+            </div>
+
+            <span class="text-xs font-semibold text-stone-300 uppercase tracking-widest block mb-1">
+              1858 – 1947 CE
+            </span>
+            <h3 class="font-royal text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+              British Indo-Saracenic
+            </h3>
+            <p class="text-neutral-400 text-xs md:text-sm leading-relaxed mb-4">
+              Imperial hybrid synthesis blending Victorian Gothic Revival, Neoclassical orders, and Scottish baronial
+              plans with Mughal chattris, Indian jharokhas, and Buddhist stupa domes.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 text-xs text-neutral-300 space-y-2 mt-4">
+            <p><strong class="text-stone-300">Key Monuments:</strong> Rashtrapati Bhavan, Victoria Memorial, CST Mumbai</p>
+            <p><strong class="text-stone-300">Core Principle:</strong> Monumental Imperial Civic &amp; Hybrid Revivalism</p>
+            <p><strong class="text-stone-300">Materials:</strong> Yellow Malad Stone, Dholpur Sandstone, Cast Iron, Marble</p>
+            <a href="projects.html" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-stone-300 hover:text-white pt-2 transition-colors">
+              <span>Explore 11 British Monuments</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         PART 2: CHRONOLOGICAL EPOCH LINE
+         5,000-YEAR ARCHITECTURAL TIMELINE
+         ========================================================================= -->
+    <section id="chronology-section" class="scroll-mt-32 pt-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-royal tracking-[0.25em] text-amber-400 block mb-2 font-semibold">
+          Chronological Epoch Line
+        </span>
+        <h2 class="font-royal text-3xl md:text-5xl font-extrabold text-white mb-4">
+          5,000-Year Architectural Timeline
+        </h2>
+        <p class="text-neutral-400 text-xs md:text-sm leading-relaxed">
+          Follow the master timeline tracking pivotal structural innovations, royal patronage milestones, and aesthetic shifts that transformed India's built environment.
+        </p>
+
+        <!-- Interactive Era Filter Bar for Timeline -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
+          <button onclick="filterTimeline('all')" id="btn-all"
+            class="timeline-filter-btn active px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-amber-500 text-stone-950 shadow-md">
+            All Epochs (10 Milestones)
+          </button>
+          <button onclick="filterTimeline('hindu')" id="btn-hindu"
+            class="timeline-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-pill text-neutral-300 hover:text-white">
+            Hindu Era
+          </button>
+          <button onclick="filterTimeline('persian')" id="btn-persian"
+            class="timeline-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-pill text-neutral-300 hover:text-white">
+            Persian / Sultanate
+          </button>
+          <button onclick="filterTimeline('mughal')" id="btn-mughal"
+            class="timeline-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-pill text-neutral-300 hover:text-white">
+            Mughal Era
+          </button>
+          <button onclick="filterTimeline('british')" id="btn-british"
+            class="timeline-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all glass-pill text-neutral-300 hover:text-white">
+            British Era
+          </button>
+        </div>
+      </div>
+
+      <!-- Timeline Container with Center Line -->
+      <div class="relative max-w-5xl mx-auto">
+
+        <!-- Center Glowing Line -->
+        <div
+          class="absolute left-4 md:left-1/2 top-0 bottom-0 -translate-x-1/2 w-0.5 bg-gradient-to-b from-amber-500 via-red-600 to-amber-700/30">
+        </div>
+
+        <div id="timelineList" class="space-y-12">
+
+          <!-- Timeline Item 1: Kailasa Ellora -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="hindu">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <span class="text-xs font-bold text-amber-300 tracking-wider uppercase">756 – 774 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                Kailasa Rock-Cut Monolith at Ellora
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                King Krishna I of the Rashtrakutas carves Cave 16 top-down out of a single vertical basalt cliff,
+                excavating over 200,000 tonnes of volcanic rock without joints or mortar.
+              </p>
+              <div class="mt-2 text-[11px] text-amber-400/80 font-medium">Patron: Rashtrakuta Dynasty &bull; Maharashtra</div>
+            </div>
+            
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+            </div>
+
+            <!-- Side Card with Thumbnail -->
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <div class="glass-panel p-3 rounded-2xl flex items-center gap-3 border-white/10 hover:border-amber-400/40 transition-all max-w-sm">
+                <img src="assets/images/monuments/kailasa-ellora.jpg" alt="Kailasa Temple" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div>
+                  <span class="era-badge hindu text-[10px]">Hindu Dravidian</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Monolithic Subtractive Carving</p>
+                  <p class="text-[10px] text-neutral-400">Zero joints &bull; Deccan Basalt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2: Brihadisvara Thanjavur -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="hindu">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <div class="glass-panel p-3 rounded-2xl flex md:flex-row-reverse items-center gap-3 border-white/10 hover:border-amber-400/40 transition-all max-w-sm md:ml-auto">
+                <img src="assets/images/monuments/brihadisvara-thanjavur.jpg" alt="Brihadisvara Temple" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div class="md:text-right">
+                  <span class="era-badge hindu text-[10px]">Chola Dravidian</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Interlocking Granite Masonry</p>
+                  <p class="text-[10px] text-neutral-400">80-Tonne Capstone &bull; 66m Vimana</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <span class="text-xs font-bold text-amber-300 tracking-wider uppercase">1010 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                The Big Temple of Thanjavur (Brihadisvara)
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                Rajaraja Chola I completes the monumental 66-meter Brihadisvara Vimana, topped with an 80-tonne single granite block cupola hoisted via a 4-mile earthen ramp.
+              </p>
+              <div class="mt-2 text-[11px] text-amber-400/80 font-medium">Patron: Chola Empire &bull; Tamil Nadu</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3: Kandariya Mahadeva Khajuraho -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="hindu">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <span class="text-xs font-bold text-amber-300 tracking-wider uppercase">1025 – 1050 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                Kandariya Mahadeva &amp; Nagara Spires
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                The Chandela dynasty erects the pinnacle of Central Indian temple architecture at Khajuraho, featuring 84 fractal miniature spires (urushringas) echoing Mount Meru.
+              </p>
+              <div class="mt-2 text-[11px] text-amber-400/80 font-medium">Patron: Chandela Dynasty &bull; Madhya Pradesh</div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <div class="glass-panel p-3 rounded-2xl flex items-center gap-3 border-white/10 hover:border-amber-400/40 transition-all max-w-sm">
+                <img src="assets/images/monuments/khajuraho-kandariya.jpg" alt="Kandariya Mahadeva" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div>
+                  <span class="era-badge hindu text-[10px]">Nagara Style</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Fractal Shikhara Geometry</p>
+                  <p class="text-[10px] text-neutral-400">870+ Relief Sculptures</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4: Qutub Minar & Sultanate Arches -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="persian">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <div class="glass-panel p-3 rounded-2xl flex md:flex-row-reverse items-center gap-3 border-white/10 hover:border-orange-500/40 transition-all max-w-sm md:ml-auto">
+                <img src="assets/images/monuments/qutub-minar.jpg" alt="Qutub Minar" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div class="md:text-right">
+                  <span class="era-badge persian text-[10px]">Early Delhi Sultanate</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">True Arcuated Engineering</p>
+                  <p class="text-[10px] text-neutral-400">72.5m Victory Minaret</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-orange-400"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <span class="text-xs font-bold text-orange-200 tracking-wider uppercase">1192 – 1220 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                Persian Influence &amp; Qutub Minar
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                The Delhi Sultanate introduces pointed true arches, squinches, muqarnas stalactite corbeling, and Arabic/Persian calligraphic friezes to North India.
+              </p>
+              <div class="mt-2 text-[11px] text-orange-300/80 font-medium">Patron: Qutb-ud-din Aibak &bull; Mehrauli, Delhi</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 5: Konark Sun Temple -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="hindu">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <span class="text-xs font-bold text-amber-300 tracking-wider uppercase">1250 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                Konark Sun Temple Celestial Chariot
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                King Narasimhadeva I of the Eastern Ganga Dynasty conceives the colossal stone chariot of Surya on the Bay of Bengal, featuring 24 carved stone sundial wheels.
+              </p>
+              <div class="mt-2 text-[11px] text-amber-400/80 font-medium">Patron: Eastern Ganga Dynasty &bull; Odisha</div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <div class="glass-panel p-3 rounded-2xl flex items-center gap-3 border-white/10 hover:border-amber-400/40 transition-all max-w-sm">
+                <img src="assets/images/monuments/konark-sun-temple.jpg" alt="Konark Sun Temple" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div>
+                  <span class="era-badge hindu text-[10px]">Kalinga Architecture</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Solar Sundial Chariot</p>
+                  <p class="text-[10px] text-neutral-400">24 Astronomical Wheels</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 6: Buland Darwaza Fatehpur Sikri -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="mughal">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <div class="glass-panel p-3 rounded-2xl flex md:flex-row-reverse items-center gap-3 border-white/10 hover:border-red-500/40 transition-all max-w-sm md:ml-auto">
+                <img src="assets/images/monuments/fatehpur-sikri.jpg" alt="Fatehpur Sikri" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div class="md:text-right">
+                  <span class="era-badge mughal text-[10px]">Akbari Mughal</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Syncretic Triumphal Arch</p>
+                  <p class="text-[10px] text-neutral-400">54m Colossal Portal</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <span class="text-xs font-bold text-red-300 tracking-wider uppercase">1571 – 1585 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                Buland Darwaza &amp; Fatehpur Sikri
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                Emperor Akbar erects the 54-meter Buland Darwaza ('Gate of Magnificence'), fusing Persian high pishtaq portals with indigenous Gujarati-Rajput bracket architecture.
+              </p>
+              <div class="mt-2 text-[11px] text-red-400/80 font-medium">Patron: Emperor Akbar &bull; Uttar Pradesh</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 7: Charminar Hyderabad -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="persian">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <span class="text-xs font-bold text-orange-200 tracking-wider uppercase">1591 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                Charminar &amp; Deccan Qutb Shahi Elegance
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                Muhammad Quli Qutb Shah commissions Iranian architect Mir Momin to construct the four-minaret ceremonial archway of Hyderabad, celebrating the founding of the city.
+              </p>
+              <div class="mt-2 text-[11px] text-orange-300/80 font-medium">Patron: Qutb Shahi Dynasty &bull; Hyderabad, Telangana</div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-orange-400"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <div class="glass-panel p-3 rounded-2xl flex items-center gap-3 border-white/10 hover:border-orange-500/40 transition-all max-w-sm">
+                <img src="assets/images/monuments/charminar-hyderabad.jpg" alt="Charminar" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div>
+                  <span class="era-badge persian text-[10px]">Qutb Shahi Style</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Four-Minaret Ceremonial Arch</p>
+                  <p class="text-[10px] text-neutral-400">56m Minarets &bull; Stucco Jali</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 8: The Taj Mahal -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="mughal">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <div class="glass-panel p-3 rounded-2xl flex md:flex-row-reverse items-center gap-3 border-white/10 hover:border-red-500/40 transition-all max-w-sm md:ml-auto">
+                <img src="assets/images/monuments/taj-mahal.jpg" alt="Taj Mahal" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div class="md:text-right">
+                  <span class="era-badge mughal text-[10px]">High Imperial Mughal</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Bilateral Symmetry &amp; Double Dome</p>
+                  <p class="text-[10px] text-neutral-400">Makrana Marble &bull; Pietra Dura</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <span class="text-xs font-bold text-red-300 tracking-wider uppercase">1632 – 1653 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                The Taj Mahal at Agra
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                Shah Jahan and Ustad Ahmad Lahori achieve global immortality with pure Makrana white marble, Parchin Kari gemstone inlay, bulbous double domes, and riverfront Charbagh pools.
+              </p>
+              <div class="mt-2 text-[11px] text-red-400/80 font-medium">Patron: Emperor Shah Jahan &bull; Agra, Uttar Pradesh</div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 9: Gol Gumbaz Bijapur -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="persian">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <span class="text-xs font-bold text-orange-200 tracking-wider uppercase">1626 – 1656 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                Gol Gumbaz &amp; Acoustic Engineering
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                Architect Yaqut of Dabul completes Mohammed Adil Shah's tomb in Bijapur, boasting a 44-meter unsupported hemispherical dome on intersecting arches and the legendary 11-echo Whispering Gallery.
+              </p>
+              <div class="mt-2 text-[11px] text-orange-300/80 font-medium">Patron: Adil Shahi Dynasty &bull; Vijayapura, Karnataka</div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-orange-400"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <div class="glass-panel p-3 rounded-2xl flex items-center gap-3 border-white/10 hover:border-orange-500/40 transition-all max-w-sm">
+                <img src="assets/images/monuments/gol-gumbaz.jpg" alt="Gol Gumbaz" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div>
+                  <span class="era-badge persian text-[10px]">Adil Shahi Deccan</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Intersecting Pendentives</p>
+                  <p class="text-[10px] text-neutral-400">44m Dome &bull; 11 Acoustic Echoes</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 10: Indo-Saracenic & New Delhi Synthesis -->
+          <div class="timeline-item relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-era="british">
+            <div class="md:w-1/2 md:text-right pl-10 md:pl-0 md:pr-10 order-2 md:order-1">
+              <div class="glass-panel p-3 rounded-2xl flex md:flex-row-reverse items-center gap-3 border-white/10 hover:border-stone-400/40 transition-all max-w-sm md:ml-auto">
+                <img src="assets/images/monuments/rashtrapati-bhavan.jpg" alt="Rashtrapati Bhavan" class="w-16 h-16 rounded-xl object-cover flex-shrink-0">
+                <div class="md:text-right">
+                  <span class="era-badge british text-[10px]">Indo-Saracenic</span>
+                  <p class="text-xs text-neutral-300 font-semibold mt-1">Lutyens' Raisina Hill Complex</p>
+                  <p class="text-[10px] text-neutral-400">Sanchi Stupa Dome &bull; 340 Rooms</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Central Node -->
+            <div
+              class="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#17110f] border-2 border-red-600 flex items-center justify-center z-10 group-hover:scale-125 group-hover:border-amber-400 transition-all order-1 shadow-lg shadow-red-950">
+              <span class="w-2.5 h-2.5 rounded-full bg-stone-300"></span>
+            </div>
+
+            <div class="md:w-1/2 pl-10 md:pl-10 order-3">
+              <span class="text-xs font-bold text-stone-300 tracking-wider uppercase">1887 – 1929 CE</span>
+              <h4 class="font-royal text-lg font-bold text-white group-hover:text-amber-300 transition-colors">
+                Indo-Saracenic &amp; New Delhi Synthesis
+              </h4>
+              <p class="text-neutral-400 text-xs mt-1 leading-relaxed">
+                F.W. Stevens completes Victoria Terminus (CST Mumbai), William Emerson constructs the Victoria Memorial, and Sir Edwin Lutyens crowns Raisina Hill with Rashtrapati Bhavan, fusing European classicism with Buddhist Sanchi domes and Mughal chattris.
+              </p>
+              <div class="mt-2 text-[11px] text-stone-300/80 font-medium">Architects: F.W. Stevens, Emerson, Lutyens &bull; Pan-India</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =========================================================================
+         CALL TO ACTION: EXPLORE ALL 44 MONUMENTS IN BENTO GRID
+         ========================================================================= -->
+    <section class="mt-28 relative overflow-hidden">
+      <div
+        class="rounded-3xl md:rounded-[40px] p-8 md:p-14 glass-panel border-red-800/30 text-center relative shadow-2xl">
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-red-700/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-amber-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <span class="text-xs uppercase font-royal tracking-[0.25em] text-amber-400 font-semibold block mb-3">
+          Interactive Architecture Gallery
+        </span>
+        <h2 class="font-royal text-3xl md:text-5xl font-extrabold text-white mb-4">
+          Experience the 44 Royal Projects
+        </h2>
+        <p class="text-neutral-300 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          Filter all 44 monuments by era in our asymmetric Bento Grid. Click any monument to view high-resolution photographs, structural blueprints, patron history, and architectural vocabulary.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="projects.html"
+            class="px-8 py-3.5 rounded-full text-xs md:text-sm font-semibold uppercase tracking-wider bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white hover:from-red-600 hover:to-amber-500 shadow-xl shadow-red-950/50 border border-amber-400/40 transition-all transform hover:-translate-y-0.5">
+            Open Bento Portfolio ↗
+          </a>
+          <a href="about.html"
+            class="px-8 py-3.5 rounded-full text-xs md:text-sm font-medium uppercase tracking-wider glass-pill text-neutral-300 hover:text-white transition-all">
+            Read Architectural Philosophy
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER (UNIFIED WITH ALL PAGES)
+       ========================================================================= -->
+  <footer class="glass-navbar border-t border-white/10 pt-16 pb-12 px-6 md:px-12 mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand & Mission Column -->
+      <div class="md:col-span-2 space-y-4">
+        <div class="flex items-center gap-3">
+          <span class="font-royal text-lg font-bold tracking-widest text-white">
+            VĀSTU // ARCHITECTURE
+          </span>
+        </div>
+        <p class="text-neutral-400 text-xs md:text-sm max-w-md leading-relaxed">
+          Dedicated to documenting the monumental heritage of India across Vedic antiquity, Dravidian granite vimanas,
+          Persian sultanate vaults, the Mughal golden age, and British Indo-Saracenic grandeur.
+        </p>
+      </div>
+
+      <!-- Quick Page Links -->
+      <div>
+        <h4 class="font-royal text-xs font-bold uppercase tracking-widest text-white mb-4">
+          Navigation
+        </h4>
+        <ul class="space-y-2.5 text-xs text-neutral-400">
+          <li><a href="index.html" class="hover:text-amber-300 transition-colors">Home Landing</a></li>
+          <li><a href="timeline.html" class="text-amber-300 font-semibold transition-colors">5,000-Year Timeline</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Projects Archive</a></li>
+          <li><a href="about.html" class="hover:text-amber-300 transition-colors">About Indian Architecture</a></li>
+          <li><a href="contact.html" class="hover:text-amber-300 transition-colors">Contact &amp; Inquiry</a></li>
+        </ul>
+      </div>
+
+      <!-- Architectural Eras Filter Quicklinks -->
+      <div>
+        <h4 class="font-royal text-xs font-bold uppercase tracking-widest text-white mb-4">
+          Architectural Eras
+        </h4>
+        <ul class="space-y-2.5 text-xs text-neutral-400">
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Hindu Rock-Cut &amp; Temple</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Persian &amp; Sultanate Arches</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">Mughal Symmetries &amp; Domes</a></li>
+          <li><a href="projects.html" class="hover:text-amber-300 transition-colors">British Indo-Saracenic</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+      <p>&copy; 2026 VĀSTU Heritage Archive. Built with HTML5, Vanilla CSS3, Modern JavaScript ES6 &amp; Tailwind CSS.</p>
+      <p class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        <span>MCA Web Architecture Project</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Master JavaScript File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Interactive Timeline Filter Script -->
+  <script>
+    function filterTimeline(era) {
+      const items = document.querySelectorAll('.timeline-item');
+      const buttons = document.querySelectorAll('.timeline-filter-btn');
+
+      // Update active button state
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-stone-950', 'shadow-md');
+        btn.classList.add('glass-pill', 'text-neutral-300');
+      });
+
+      const activeBtn = document.getElementById(`btn-${era}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('glass-pill', 'text-neutral-300');
+        activeBtn.classList.add('bg-amber-500', 'text-stone-950', 'shadow-md');
+      }
+
+      // Filter timeline items
+      items.forEach(item => {
+        const itemEra = item.getAttribute('data-era');
+        if (era === 'all' || itemEra === era) {
+          item.style.display = 'flex';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 200);
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
+
